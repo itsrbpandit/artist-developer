@@ -177,16 +177,27 @@ main {
 }
 
 .main-grid-speaking {
-	grid-column: 2 / span 4;
+	grid-column: 2 / span 5;
 	grid-row: 5;
-	justify-self: center;
+}
+
+.main-grid-speaking .section-list li {
+	break-inside: avoid;
+}
+
+@media (min-width: 600px) {
+	.main-grid-speaking .section-list {
+		column-count: 2;
+		column-gap: 32px;
+	}
 }
 
 .main-grid-writing {
-	grid-column: 5;
+	grid-column: 5 / span 2;
 	grid-row: 2 / 3;
 	align-self: end;
 	justify-self: right;
+	text-align: right;
 }
 
 .main-grid-coding {
@@ -201,9 +212,21 @@ main {
 }
 
 .main-grid-teaching {
-	grid-column: 5 / span 2;
-	grid-row: 4 / 5;
+	grid-column: 2 / span 5;
+	grid-row: 4;
 	align-self: center;
+}
+
+.main-grid-teaching .section-list {
+	max-width: 62ch;
+	font-size: 19px;
+	line-height: 1.6;
+}
+
+.main-grid-color-theory {
+	grid-column: 4 / span 4;
+	grid-row: 6 / span 2;
+	align-self: start;
 }
 
 /* useless but pretty shards */
@@ -308,7 +331,39 @@ main {
 
 footer {
 	border-top: 1px solid var(--color-complementary-neutral-dark);
-	text-align: center;
+	padding: 24px 20px;
+}
+
+.footer-links {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 8px 24px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.footer-links li {
+	position: relative;
+}
+
+.footer-links li + li::before {
+	content: "";
+	position: absolute;
+	left: -13px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 3px;
+	height: 3px;
+	border-radius: 50%;
+	background: var(--color-complementary-neutral-dark);
+}
+
+.footer-links a {
+	font-size: 14px;
+	letter-spacing: 0.02em;
 }
 
 h2 {

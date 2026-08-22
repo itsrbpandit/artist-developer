@@ -39,22 +39,22 @@
 	--color-primary-gray: #698e96;
 	--color-complementary-gray: #74878b;
 	--color-black: #2b2b2b;                      /* grayscale(complementary-neutral-dark) */
-	--color-dark-neutral: #222;
+	--color-dark-neutral:#050505;
 	--color-off-white: #efefef;
 	--white: white;                              /* plain white/black, used by the clock */
 	--black: black;
 
 	/* ============ Color — accents ============ */
-	--color-heading-underline: #860519;          /* mobile section-heading underline */
-	--color-shard-red: #9d0021;                  /* grid background shards */
-	--color-stroke-highlight: papayawhip;        /* SVG line-draw stroke */
+	--color-heading-underline: #ad142b;          /* mobile section-heading underline */
+	--color-shard-red: #b01e3e;                  /* grid background shards */
+	--color-stroke-highlight: rgb(203, 255, 140);        /* SVG line-draw stroke */
 	--color-text-block-bg: hsla(10, 30%, 80%, 0.2);
 
 	/* ============ Color — background shard fills (darken(#AB001F, n)) ============ */
-	--shard-fill-1: #780016;
-	--shard-fill-2: #210006;
-	--shard-fill-3: #45000d;
-	--shard-fill-4: #120003;
+	--shard-fill-1: #97112a;
+	--shard-fill-2: #4d242c;
+	--shard-fill-3: #c1092b;
+	--shard-fill-4: #3a0911;
 
 	/* ============ Color — gem facet base fills ============ */
 	--gem-fill-0: #d4c3bf;
