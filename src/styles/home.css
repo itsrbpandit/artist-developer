@@ -1,0 +1,357 @@
+@charset "utf-8";
+
+/*
+ * Home page styles — ported from all.css.scss + _portrait.scss.
+ *
+ * The SVG-internal classes (.🎂, .self-portrait, .grid-shard, .background-shard,
+ * .st0–.st348, .svg-title) are kept as-is: the SVGs themselves are carried over
+ * unchanged from the original site.
+ *
+ * Breakpoint: 600px (single column below, CSS Grid collage above).
+ */
+
+/* ============ Portrait & background shards (from _portrait.scss) ============ */
+
+/* Original emitted .st0:hover … .st348:hover via a Sass loop; every .stN element
+   is a shape inside the portrait or a grid shard, so this collapses to: */
+.self-portrait polygon:hover,
+.self-portrait path:hover,
+.self-portrait line:hover,
+.self-portrait polyline:hover,
+.grid-shard polygon:hover {
+	animation: none;
+	cursor: crosshair;
+}
+
+.st13, .st14, .st309, .st164, .st144, .st295, .st52, .st11, .st299 {
+	animation: none;
+}
+
+background-shards {
+	display: block;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	z-index: var(--layer-background);
+	margin-top: -30px;
+}
+
+.svg-title {
+	font-family: var(--font-display);
+	opacity: 0.6;
+}
+
+.portrait {
+	display: block;
+	margin: auto;
+	max-width: var(--size-grid-narrow-max);
+	margin-top: 15px;
+}
+
+/* The original randomized shard placement at compile time with Sass random();
+   <background-shards> now sets these custom properties at runtime. The
+   fallbacks keep the shards visible if scripting is unavailable. */
+.shard1 {
+	position: absolute;
+	top: var(--shard-top, 3%);
+	left: var(--shard-left, 20%);
+	z-index: var(--layer-background);
+	width: var(--shard-width, 1040px);
+}
+
+.shard1 .🎂 {
+	fill: var(--shard-fill-1);
+}
+
+.shard2 {
+	position: absolute;
+	top: var(--shard-top, 3%);
+	left: var(--shard-left, 30%);
+	z-index: var(--layer-background);
+	width: var(--shard-width, 720px);
+}
+
+.shard2 .🎂 {
+	fill: var(--shard-fill-2);
+}
+
+.shard3 {
+	position: absolute;
+	top: 0;
+	left: var(--shard-left, 10%);
+	z-index: var(--layer-background);
+	width: var(--shard-width, 720px);
+}
+
+.shard3 .🎂 {
+	fill: var(--shard-fill-3);
+}
+
+.shard4 {
+	position: absolute;
+	top: var(--shard-top, 5%);
+	left: var(--shard-left, 35%);
+	z-index: var(--layer-background);
+	width: var(--shard-width, 720px);
+}
+
+.shard4 .🎂 {
+	fill: var(--shard-fill-4);
+}
+
+.shard1:hover,
+.shard2:hover,
+.shard3:hover,
+.shard4:hover {
+	animation: none;
+	cursor: crosshair;
+}
+
+.self-portrait {
+	padding: 10px;
+}
+
+.self-portrait polygon {
+	fill-opacity: 0;
+	stroke: var(--color-stroke-highlight);
+	stroke-width: 1;
+	stroke-dasharray: 252;
+	stroke-dashoffset: 252;
+	animation: draw var(--duration-draw) linear forwards;
+}
+
+@keyframes draw {
+	0% {
+		fill-opacity: 0;
+	}
+	60% {
+		fill-opacity: 1;
+	}
+	80% {
+		stroke-dashoffset: 0;
+		stroke-width: 0;
+	}
+	100% {
+		fill-opacity: 1;
+		stroke-width: 0;
+		stroke-dashoffset: 0;
+	}
+}
+
+/* ============ Page & grid (from all.css.scss) ============ */
+
+body {
+	background-color: var(--color-dark-neutral);
+	position: relative;
+	font-family: var(--font-body);
+}
+
+main {
+	max-width: var(--size-content-max);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.main-grid {
+	margin: auto;
+	padding: 20px;
+	padding-top: 0;
+	margin-bottom: 30px;
+	max-width: var(--size-grid-narrow-max);
+}
+
+@media (min-width: 600px) {
+	.main-grid {
+		max-width: none;
+		display: grid;
+		grid-template-columns: 1.3fr 0.6fr 1.3fr 0.8fr 1fr 1.6fr 1fr;
+		grid-column-gap: 10px;
+		grid-row-gap: 1vw;
+	}
+}
+
+.main-grid-content {
+	z-index: var(--layer-content);
+}
+
+.main-grid-speaking {
+	grid-column: 2 / span 4;
+	grid-row: 5;
+	justify-self: center;
+}
+
+.main-grid-writing {
+	grid-column: 5;
+	grid-row: 2 / 3;
+	align-self: end;
+	justify-self: right;
+}
+
+.main-grid-coding {
+	grid-column: 3 / span 3;
+	grid-row: 2;
+}
+
+@media (min-width: 600px) {
+	.main-grid-coding {
+		min-height: 250px;
+	}
+}
+
+.main-grid-teaching {
+	grid-column: 5 / span 2;
+	grid-row: 4 / 5;
+	align-self: center;
+}
+
+/* useless but pretty shards */
+
+.background-shard {
+	fill: var(--color-shard-red);
+	stroke: var(--color-shard-red);
+}
+
+.background-shard:hover {
+	animation: none;
+	cursor: crosshair;
+}
+
+.main-grid-coding-shard {
+	grid-column: 1 / span 4;
+	grid-row: 1 / 4;
+	min-height: 250px;
+}
+
+.main-grid-teaching-shard {
+	grid-column: 4 / span 3;
+	grid-row: 4;
+	align-self: start;
+}
+
+.main-grid-color-theory-shard {
+	grid-column: 1 / span 3;
+	grid-row: 6;
+	align-self: start;
+}
+
+.main-grid-color-theory-shard:hover {
+	animation: none;
+}
+
+.main-grid-writing-shard {
+	grid-column: 5 / span 2;
+	grid-row: 2;
+	align-self: center;
+}
+
+.main-grid-illustrating {
+	grid-column: 4 / span 3;
+	grid-row: 3 / 4;
+}
+
+.main-grid-illustrating-shard {
+	grid-column: 3 / span 3;
+	grid-row: 3 / 4;
+	align-self: start;
+}
+
+.main-grid-speaking-shard {
+	grid-column: 2 / span 5;
+	grid-row: 5;
+	align-self: start;
+}
+
+.main-grid-grid-shard {
+	grid-column: 4 / span 4;
+	grid-row: 7;
+}
+
+.grid-shard polygon {
+	stroke-width: 3;
+	fill-opacity: 0;
+	stroke: var(--color-stroke-highlight);
+	stroke-dasharray: 2052;
+	stroke-dashoffset: 2052;
+	animation: draw var(--duration-draw) var(--delay-draw-grid) linear forwards;
+}
+
+.main-grid-coding-shard,
+.main-grid-speaking-shard,
+.main-grid-illustrating-shard,
+.main-grid-writing-shard,
+.main-grid-grid-shard,
+.main-grid-teaching-shard {
+	display: none;
+}
+
+.main-grid-coding-shard:hover,
+.main-grid-speaking-shard:hover,
+.main-grid-illustrating-shard:hover,
+.main-grid-writing-shard:hover,
+.main-grid-grid-shard:hover,
+.main-grid-teaching-shard:hover {
+	animation: none !important;
+}
+
+@media (min-width: 600px) {
+	.main-grid-coding-shard,
+	.main-grid-speaking-shard,
+	.main-grid-illustrating-shard,
+	.main-grid-writing-shard,
+	.main-grid-grid-shard,
+	.main-grid-teaching-shard {
+		display: inline-block;
+	}
+}
+
+footer {
+	border-top: 1px solid var(--color-complementary-neutral-dark);
+	text-align: center;
+}
+
+h2 {
+	color: var(--color-complementary-neutral-light);
+}
+
+.section-heading {
+	text-align: left;
+	font-size: 28px;
+	border-bottom: 10px solid var(--color-heading-underline);
+}
+
+@media (min-width: 600px) {
+	.section-heading {
+		border-bottom: none;
+	}
+}
+
+.section-list {
+	color: var(--color-complementary-neutral-light);
+	list-style: none;
+	font-size: 18px;
+}
+
+.section-list li {
+	margin-bottom: 0.5em;
+}
+
+p {
+	color: var(--color-complementary-neutral-light);
+}
+
+a {
+	color: var(--color-complementary-neutral-light);
+}
+
+a:active,
+a:focus,
+a:hover {
+	color: white;
+	text-decoration: underline;
+}
+
+a:focus {
+	outline: thin dotted;
+}

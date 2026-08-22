@@ -1,0 +1,75 @@
+/*
+ * Sketchnotes page styles — ported from sketchnotes.css.scss.
+ * Gallery items are now <figure>/<figcaption>; the figcaption margin mirrors
+ * the default <p> margin of the original caption markup.
+ */
+
+html {
+	background: var(--color-dark-neutral);
+	background-size: cover;
+	text-align: center;
+	font-size: 10px;
+}
+
+body {
+	max-width: var(--size-page-max);
+	max-width: 100vw;
+	margin: auto;
+	font-size: 2rem;
+	min-height: 100vh;
+	font-family: var(--font-hand);
+	color: white;
+}
+
+a {
+	color: white;
+}
+
+/* Back-home navigation — a quiet handwritten margin note in the top corner,
+   dimmed until hovered so the artwork keeps visual priority. */
+.site-nav {
+	text-align: left;
+	padding: 10px 20px;
+}
+
+.home-link {
+	display: inline-block;
+	font-family: var(--font-hand);
+	text-decoration: none;
+	opacity: 0.75;
+	transition: opacity 0.15s ease;
+}
+
+.home-link:hover,
+.home-link:focus {
+	opacity: 1;
+	text-decoration: underline;
+}
+
+img {
+	width: 100%;
+}
+
+.heading {
+	color: white;
+	font-family: var(--font-hand);
+}
+
+.grid-image-gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	align-items: center;
+	grid-column-gap: 30px;
+	grid-row-gap: 20px;
+	padding: 20px;
+	margin: auto;
+	list-style: none;
+}
+
+.grid-image-gallery figure {
+	margin: 0;
+}
+
+.grid-image-gallery figcaption {
+	margin: 1em 0; /* matches the default margin of the original <p> captions */
+}

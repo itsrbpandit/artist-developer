@@ -1,0 +1,41 @@
+/*
+ * Base — global styles shared by every page.
+ *
+ * Replaces normalize.css v2.0.1 with the minimal set of rules this site
+ * actually relies on. NOTE: box-sizing is intentionally left at the default
+ * content-box — the original layout metrics (clock border + padding, swatch
+ * widths, grid) were authored against it.
+ */
+
+html {
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+}
+
+img {
+	border: 0;
+	max-width: 100%;
+	height: auto;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+/* Respect users who prefer reduced motion: complete the line-draw animations
+   instantly (they fill forwards to the finished artwork) and stop the
+   continuous gem / clock movement. */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-delay: 0s !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}

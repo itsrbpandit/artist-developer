@@ -1,0 +1,93 @@
+/*
+ * Design tokens — the single source of truth for every design value on the site.
+ *
+ * The color palette was originally derived at compile time by the Sass color
+ * theory system in old-portfolio/source/stylesheets/_variables.scss, seeded
+ * from hsl(10, 100%, 50%). The functions (harmonious-mix, mix-neutral, …) were
+ * compiled once with dart-sass and their exact computed output is frozen here.
+ *
+ * Breakpoint (media queries cannot consume custom properties): 600px.
+ */
+
+:root {
+	/* ============ Color — seed pair ============ */
+	--color-first: hsl(10, 100%, 50%);
+	--color-second: hsl(190, 100%, 50%); /* complement of --color-first */
+
+	/* ============ Color — theory-derived palette ============ */
+	--color-primary: #d64629;                    /* harmonious-mix(second, first) */
+	--color-complementary: #3badc4;              /* harmonious-mix(first, second) */
+	--color-analogous: #3bc480;                  /* adjust-hue(complementary, -40) */
+	--color-complementary-analogous: #3bbd97;    /* mix(analogous, complementary, 66) */
+
+	/* ============ Color — neutrals (highlight / midtone / shadow) ============ */
+	--color-complementary-neutral: #5a98a5;
+	--color-complementary-neutral-light: #c7dce0;
+	--color-complementary-neutral-dark: #1f3438;
+	--color-primary-neutral: #ae6051;
+	--color-primary-neutral-light: #e4c9c4;
+	--color-primary-neutral-dark: #3b211b;
+
+	/* ============ Color — tints & shades ============ */
+	--color-primary-light: #dc816f;
+	--color-primary-dark: #903523;
+	--color-complementary-light: #7ac2d1;
+
+	/* ============ Color — pure neutrals ============ */
+	--color-white: #fcf9f8;                      /* lighten(primary-neutral-light, 15) */
+	--color-neutral-gray: #808080;
+	--color-primary-gray: #698e96;
+	--color-complementary-gray: #74878b;
+	--color-black: #2b2b2b;                      /* grayscale(complementary-neutral-dark) */
+	--color-dark-neutral: #222;
+	--color-off-white: #efefef;
+	--white: white;                              /* plain white/black, used by the clock */
+	--black: black;
+
+	/* ============ Color — accents ============ */
+	--color-heading-underline: #860519;          /* mobile section-heading underline */
+	--color-shard-red: #9d0021;                  /* grid background shards */
+	--color-stroke-highlight: papayawhip;        /* SVG line-draw stroke */
+	--color-text-block-bg: hsla(10, 30%, 80%, 0.2);
+
+	/* ============ Color — background shard fills (darken(#AB001F, n)) ============ */
+	--shard-fill-1: #780016;
+	--shard-fill-2: #210006;
+	--shard-fill-3: #45000d;
+	--shard-fill-4: #120003;
+
+	/* ============ Color — gem facet base fills ============ */
+	--gem-fill-0: #d4c3bf;
+	--gem-fill-1: #bfa6a1;
+	--gem-fill-2: #995042;
+	--gem-fill-3: #b78980;
+	--gem-fill-4: black;
+	--gem-fill-5: #be8479;
+	--gem-fill-6: #975245;
+
+	/* ============ Typography ============ */
+	--font-body: 'Open Sans Condensed', sans-serif;
+	--font-display: 'Pacifico', serif;
+	--font-hand: 'Caveat', sans-serif;
+	--font-demos: 'helvetica neue', sans-serif;
+
+	/* ============ Size & spacing ============ */
+	--size-content-max: 970px;       /* home <main> */
+	--size-page-max: 1000px;         /* demos / sketchnotes body */
+	--size-grid-narrow-max: 400px;   /* single-column grid + portrait wrapper */
+	--size-text-block-max: 800px;    /* demo explainer paragraphs */
+	--size-gem-width: 410px;
+	--size-clock: 25rem;
+
+	/* ============ Motion ============ */
+	--duration-draw: 5s;             /* SVG line-draw animation */
+	--delay-draw-grid: 2s;           /* grid shards start after the portrait */
+	--duration-gem-cycle: 5s;        /* gem hue-rotation cycle */
+	--duration-hand: 0.05s;          /* clock hand tick transition */
+	--ease-hand: cubic-bezier(0.1, 2.7, 0.58, 1);
+
+	/* ============ Layers ============ */
+	--layer-background: -2;
+	--layer-raised: 2;
+	--layer-content: 3;
+}

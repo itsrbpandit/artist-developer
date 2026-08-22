@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="data:,">
+	<title>Demos</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Pacifico" rel="stylesheet">
+	<link rel="stylesheet" href="/src/styles/tokens.css">
+	<link rel="stylesheet" href="/src/styles/base.css">
+	<link rel="stylesheet" href="/src/styles/demos.css">
+	<script type="module" src="/src/demos.ts"></script>
+</head>
+
+<body>
+	<main>
+		<demo-nav>
+
+			<article class="active demo-item">
+				<h1 class="demo-heading">HSL Clock</h1>
+				<hsl-clock></hsl-clock>
+
+				<p class="demo-text-block">HSL is an intuitive way of understanding and using color (the h in hsl). There are 360deg, with each angle corresponding to a hue on the color wheel. If you can learn to read an analog clock, you can learn hsl()!</p>
+			</article>
+
+			<article class="demo-item">
+				<h1 class="demo-heading">Value Scales</h1>
+				<value-scale variant="lightness">
+					<h2 class="scale-heading">Lightness</h2>
+				</value-scale>
+
+				<p class="demo-text-block">I am just editing the L in hsl() in this instance. I have set the hue to 0deg (red) and the saturation to 0% (no color saturation) and in each block I increment the lightness up by 10. The value moves from low key (black) to high key (white). Value is the foundation of contrast.</p>
+
+				<value-scale variant="saturation">
+					<h2 class="scale-heading">Lightness & Saturation</h2>
+				</value-scale>
+
+				<p class="demo-text-block">Let's add saturation to the mix. I have left the hue at 0deg (red) and the saturation is now maxed out at 100% (full color saturation) and in each block I continue increment the lightness up by 10. This is how a color is modified by lightness. In the middle, at 100% saturation and 50% lightness, you have the "reddest red" - great for mixing!</p>
+
+				<value-scale variant="hue">
+					<h2 class="scale-heading">Lightness, Saturation, and Hue</h2>
+				</value-scale>
+
+				<p class="demo-text-block">Now, with the saturation at 100% and the Lightness incrementing up by 10%, I have set the hue to adjust angle by around 30deg each block. Notice how much harder it is to accurately perceive value when color information is added. Suddenly, we may make mistakes about which colors are "brighter."</p>
+			</article>
+
+			<article class="demo-item">
+				<h1 class="demo-heading">Highlights, Midtones, Shadows to create shape</h1>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg class="💎" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 983.2 951.2" style="enable-background:new 0 0 983.2 951.2;" xml:space="preserve">
+
+<g id="top">
+	<polygon class="gem0" points="309.6,3.5 626.3,3.5 783.4,60.6 657.3,115.4 309.6,115.4 162,59.5 	"/>
+</g>
+<g id="middle_left">
+	<polygon class="gem1" points="140.6,86.8 9.6,215.4 231.1,308.3 284.4,136.2 	"/>
+</g>
+<g id="middle_right">
+	<polygon class="gem2" points="807.3,74.9 973.9,217.8 750,317.8 681.1,136.8 	"/>
+</g>
+<g id="bottom_left">
+	<polygon class="gem3" points="9.6,248.7 472.7,908.3 241.2,341.6 	"/>
+</g>
+<g id="bottom_right">
+	<polygon class="gem4" points="973.9,248.7 526.1,918.9 750,341.6 	"/>
+</g>
+<g id="middle_middle">
+	<polygon class="gem5" points="303.2,152.4 259.6,317.8 728.4,317.8 651.5,150.3 	"/>
+</g>
+<g id="bottom_middle">
+	<polygon class="gem6" points="259.6,341.6 728.4,341.6 501,941.6 	"/>
+</g>
+</svg>
+				<p class="demo-text-block">Now that you know how to create highlights, midtones, and shadows with any shade of gray or any color (adjusting for hue, saturation, and lightness) you can create the illusion of shape. </p>
+			</article>
+
+		</demo-nav>
+	</main>
+</body>
+</html>

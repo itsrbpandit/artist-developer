@@ -1,0 +1,360 @@
+@charset "utf-8";
+
+/*
+ * Demos page styles — ported from demos.css.scss.
+ *
+ * The gem SVG's internal classes (.💎, .gem0–.gem6) are kept as-is: the SVG is
+ * carried over unchanged from the original site. The clock and value-scale
+ * styles live inside their components (<hsl-clock>, <value-scale>).
+ *
+ * The adjust0–adjust6 keyframe colors were compiled once from the original
+ * Sass (adjust-hue over the theory palette); the duplicated 10% stop in the
+ * source was corrected to the evident 20%.
+ */
+
+html {
+	background: var(--color-dark-neutral);
+	background-size: cover;
+	font-family: var(--font-demos);
+	text-align: center;
+	font-size: 10px;
+}
+
+body {
+	max-width: var(--size-page-max);
+	margin: 0;
+	font-size: 2rem;
+	display: flex;
+	flex: 1;
+	min-height: 100vh;
+	align-items: center;
+}
+
+demo-nav {
+	display: block;
+}
+
+.demo-heading {
+	color: white;
+}
+
+/* navigation */
+
+.demo-item {
+	width: 100vw;
+	min-height: 100vh;
+	margin-bottom: 15vh;
+}
+
+.scale-heading {
+	font-size: 16px;
+	color: var(--color-off-white);
+}
+
+.demo-text-block {
+	text-align: left;
+	margin: 10px auto 45px auto;
+	padding: 30px;
+	background-color: var(--color-text-block-bg);
+	max-width: var(--size-text-block-max);
+	font-size: 15px;
+	color: var(--color-off-white);
+}
+
+/* ============ Gem ============ */
+
+.💎 {
+	display: block;
+	margin: auto;
+	width: var(--size-gem-width);
+	padding: 0 30px;
+	fill: var(--color-complementary-neutral-light);
+	stroke: none;
+}
+
+.💎 .gem0 {
+	fill: var(--gem-fill-0);
+	animation: adjust0 var(--duration-gem-cycle) linear infinite alternate;
+}
+
+.💎 .gem1 {
+	fill: var(--gem-fill-1);
+	animation: adjust1 var(--duration-gem-cycle) linear infinite alternate;
+}
+
+.💎 .gem2 {
+	fill: var(--gem-fill-2);
+	animation: adjust2 var(--duration-gem-cycle) linear infinite alternate;
+}
+
+.💎 .gem3 {
+	fill: var(--gem-fill-3);
+	animation: adjust3 var(--duration-gem-cycle) linear infinite alternate;
+}
+
+.💎 .gem4 {
+	fill: var(--gem-fill-4);
+	animation: adjust4 var(--duration-gem-cycle) linear infinite alternate;
+}
+
+.💎 .gem5 {
+	fill: var(--gem-fill-5);
+	animation: adjust5 var(--duration-gem-cycle) linear infinite alternate;
+}
+
+.💎 .gem6 {
+	fill: var(--gem-fill-6);
+	animation: adjust6 var(--duration-gem-cycle) linear infinite alternate;
+}
+
+@keyframes adjust0 {
+	0% {
+		fill: #d4cfbf;
+	}
+	10% {
+		fill: #ccd4bf;
+	}
+	20% {
+		fill: #c0d4bf;
+	}
+	30% {
+		fill: #bfd4cb;
+	}
+	40% {
+		fill: #bfd0d4;
+	}
+	50% {
+		fill: #bfc4d4;
+	}
+	60% {
+		fill: #c7bfd4;
+	}
+	70% {
+		fill: #d3bfd4;
+	}
+	80% {
+		fill: #d4bfc8;
+	}
+	90% {
+		fill: #d4c3bf;
+	}
+	100% {
+		fill: #c9c9c9;
+	}
+}
+
+@keyframes adjust1 {
+	0% {
+		fill: #bfb8a1;
+	}
+	10% {
+		fill: #b4bfa1;
+	}
+	20% {
+		fill: #a2bfa1;
+	}
+	30% {
+		fill: #a1bfb2;
+	}
+	40% {
+		fill: #a1babf;
+	}
+	50% {
+		fill: #a1a8bf;
+	}
+	60% {
+		fill: #aca1bf;
+	}
+	70% {
+		fill: #bea1bf;
+	}
+	80% {
+		fill: #bfa1ae;
+	}
+	90% {
+		fill: #bfa6a1;
+	}
+	100% {
+		fill: #b0b0b0;
+	}
+}
+
+@keyframes adjust2 {
+	0% {
+		fill: #766633;
+	}
+	10% {
+		fill: #5d7633;
+	}
+	20% {
+		fill: #357633;
+	}
+	30% {
+		fill: #337659;
+	}
+	40% {
+		fill: #336b76;
+	}
+	50% {
+		fill: #334276;
+	}
+	60% {
+		fill: #4b3376;
+	}
+	70% {
+		fill: #743376;
+	}
+	80% {
+		fill: #763350;
+	}
+	90% {
+		fill: #763e33;
+	}
+	100% {
+		fill: #545454;
+	}
+}
+
+@keyframes adjust3 {
+	0% {
+		fill: #bdb18a;
+	}
+	10% {
+		fill: #aabd8a;
+	}
+	20% {
+		fill: #8bbd8a;
+	}
+	30% {
+		fill: #8abda7;
+	}
+	40% {
+		fill: #8ab4bd;
+	}
+	50% {
+		fill: #8a96bd;
+	}
+	60% {
+		fill: #9c8abd;
+	}
+	70% {
+		fill: #bb8abd;
+	}
+	80% {
+		fill: #bd8aa0;
+	}
+	90% {
+		fill: #bd928a;
+	}
+	100% {
+		fill: #a3a3a3;
+	}
+}
+
+@keyframes adjust4 {
+	0% {
+		fill: #4d4428;
+	}
+	10% {
+		fill: #404d28;
+	}
+	20% {
+		fill: #294d28;
+	}
+	30% {
+		fill: #284d3d;
+	}
+	40% {
+		fill: #28474d;
+	}
+	50% {
+		fill: #28314d;
+	}
+	60% {
+		fill: #36284d;
+	}
+	70% {
+		fill: #4c284d;
+	}
+	80% {
+		fill: #4d2838;
+	}
+	90% {
+		fill: #4d2e28;
+	}
+	100% {
+		fill: #3b3b3b;
+	}
+}
+
+@keyframes adjust5 {
+	0% {
+		fill: #c3b483;
+	}
+	10% {
+		fill: #acc383;
+	}
+	20% {
+		fill: #85c383;
+	}
+	30% {
+		fill: #83c3a7;
+	}
+	40% {
+		fill: #83b9c3;
+	}
+	50% {
+		fill: #8392c3;
+	}
+	60% {
+		fill: #9b83c3;
+	}
+	70% {
+		fill: #c183c3;
+	}
+	80% {
+		fill: #c3839f;
+	}
+	90% {
+		fill: #c38e83;
+	}
+	100% {
+		fill: #a3a3a3;
+	}
+}
+
+@keyframes adjust6 {
+	0% {
+		fill: #978445;
+	}
+	10% {
+		fill: #799745;
+	}
+	20% {
+		fill: #479745;
+	}
+	30% {
+		fill: #459773;
+	}
+	40% {
+		fill: #458997;
+	}
+	50% {
+		fill: #455897;
+	}
+	60% {
+		fill: #634597;
+	}
+	70% {
+		fill: #944597;
+	}
+	80% {
+		fill: #974568;
+	}
+	90% {
+		fill: #975245;
+	}
+	100% {
+		fill: #6e6e6e;
+	}
+}

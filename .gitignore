@@ -1,1 +1,5 @@
-build
+*storybook.log
+dist
+node_modules
+old-portfolio
+storybook-static
